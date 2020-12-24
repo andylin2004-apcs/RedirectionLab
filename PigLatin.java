@@ -1,7 +1,10 @@
+import java.util.*;
+
 class PigLatin{
+  static char[] vovels = new char[]{'a','e','i','o','u'};
   public static String pigLatinSimple(String s){
     s = s.toLowerCase();
-    if (s.charAt(0) == 'a' || s.charAt(0) == 'e' || s.charAt(0) == 'i' || s.charAt(0) == 'o' || s.charAt(0) == 'u'){
+    if (Arrays.asList(vovels).contains(s.charAt(0))){
       s += "hay";
     }else{
       String first = s.substring(0,1);
