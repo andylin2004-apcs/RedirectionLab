@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.*;
 
 class PigLatin{
   static char[] vovels = new char[]{'a','e','i','o','u'};
@@ -49,5 +50,19 @@ class PigLatin{
       }
     }
     return s;
+  }
+  public static void main(String[] args) throws IOException{
+    Scanner in = new Scanner(new InputStreamReader(System.in));
+
+    while(in.hasNextLine()){
+      Scanner line = new Scanner(in.nextLine());
+      String toPrint = "";
+      while(line.hasNext()){
+        String word = line.next();
+        toPrint += pigLatinBest(word);
+        toPrint += " ";
+      }
+      System.out.println(toPrint);
+    }
   }
 }
